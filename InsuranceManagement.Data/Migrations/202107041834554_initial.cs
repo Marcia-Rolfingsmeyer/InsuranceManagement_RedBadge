@@ -3,7 +3,7 @@ namespace InsuranceManagement.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -20,12 +20,7 @@ namespace InsuranceManagement.Data.Migrations
                         Address = c.String(),
                         City = c.String(nullable: false),
                         State = c.String(nullable: false),
-                        ZipCode = c.Int(nullable: false),
-                        County = c.String(),
-                        Township = c.String(),
-                        SSNumberTaxID = c.String(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.ClientID);
             

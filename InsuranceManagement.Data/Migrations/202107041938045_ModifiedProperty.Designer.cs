@@ -7,13 +7,13 @@ namespace InsuranceManagement.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class ModifiedProperty : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ModifiedProperty));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107021605535_InitialCreate"; }
+            get { return "202107041938045_ModifiedProperty"; }
         }
         
         string IMigrationMetadata.Source

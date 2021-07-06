@@ -1,5 +1,6 @@
 ﻿using InsuranceManagement.Data;
 using InsuranceManagement.Models;
+using InsuranceManagement.Models.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,10 +31,10 @@ namespace InsuranceManagement.Services
                     Address = model.Address,
                     City = model.City,
                     State = model.State,
-                    ZipCode = model.ZipCode,
-                    County = model.County,
-                    Township = model.Township,
-                    SSNumberTaxID = model.SSNumberTaxID,
+                    //ZipCode = model.ZipCode,
+                    //County = model.County,
+                    //Township = model.Township,
+                    //SSNumberTaxID = model.SSNumberTaxID,
                     CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
@@ -64,6 +65,29 @@ namespace InsuranceManagement.Services
                                 CreatedUtc = e.CreatedUtc
                             });
                 return query.ToArray();
+            }
+        }
+
+        //GET : Client Details
+        public ClientDetail GetClientById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Clients
+                        .Single(e => e.ClientID == id && e.OwnerId == _ownerId);
+                    return
+                    new ClientDetail
+                    {
+                        ClientID= entity.ClientID,
+                        FirstName = entity.FirstName,
+                        LastName = entity.LastName,
+                        Phone = entity.Phone,
+                        Email = entity.Email,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
             }
         }
     }

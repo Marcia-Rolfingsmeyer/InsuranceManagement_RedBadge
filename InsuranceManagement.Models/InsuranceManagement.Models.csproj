@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client\ClientCreate.cs" />
+    <Compile Include="Client\ClientDetail.cs" />
     <Compile Include="Client\ClientList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

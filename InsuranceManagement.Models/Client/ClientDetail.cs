@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InsuranceManagement.Models
+namespace InsuranceManagement.Models.Client
 {
-    public class ClientCreate
+    public class ClientDetail
     {
         public int ClientID { get; set; }
 
@@ -33,16 +33,10 @@ namespace InsuranceManagement.Models
         [Required]
         public string State { get; set; }
 
-        //[Required]
-        //[MinLength(5, ErrorMessage = "Must have 5 characters")]
-        //[MaxLength(5, ErrorMessage = "ZipCode should have 5 characters")]
-        //public int ZipCode { get; set; }
+        [Display(Name ="Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
 
-        //public string County { get; set; }
-
-        //public string Township { get; set; }
-
-        //[Display(Name = "Social Security Number or Tax ID")]
-        //public string SSNumberTaxID { get; set; }
+        [Display(Name = "Modified")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

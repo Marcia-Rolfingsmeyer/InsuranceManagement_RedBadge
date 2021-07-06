@@ -24,7 +24,6 @@ namespace InsuranceManagement.Data
         public string LastName { get; set; }
 
         [Required]
-        [Phone]
         public string Phone { get; set; }
 
         [EmailAddress]
@@ -38,20 +37,20 @@ namespace InsuranceManagement.Data
         [Required]
         public string State { get; set; }
 
-        [Required]
-        [MinLength(5, ErrorMessage = "Must have 5 characters")]
-        public int ZipCode { get; set; }
+        //[Required]
+        //[MinLength(5, ErrorMessage = "Must have 5 characters")]
+        //public int ZipCode { get; set; }
 
-        public string County { get; set; }
+        //public string County { get; set; }
 
-        public string Township { get; set; }
+        //public string Township { get; set; }
 
-        [Display(Name = "Social Security Number or Tax ID")]
-        public string SSNumberTaxID { get; set; }
+        //[Display(Name = "Social Security Number or Tax ID")]
+        //public string SSNumberTaxID { get; set; }
 
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        public string FullName() => $"{FirstName} {LastName}";
+        //public string FullName() => $"{FirstName} {LastName}";
     }
 }

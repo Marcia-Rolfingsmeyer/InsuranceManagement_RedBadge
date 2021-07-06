@@ -7,13 +7,13 @@ namespace InsuranceManagement.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class createandindex : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(createandindex));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107022005341_create and index"; }
+            get { return "202107041834554_initial"; }
         }
         
         string IMigrationMetadata.Source

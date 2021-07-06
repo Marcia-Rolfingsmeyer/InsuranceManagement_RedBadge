@@ -10,7 +10,6 @@ namespace InsuranceManagement.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "InsuranceManagement.Data.ApplicationDbContext";
         }
 
         protected override void Seed(InsuranceManagement.Data.ApplicationDbContext context)
