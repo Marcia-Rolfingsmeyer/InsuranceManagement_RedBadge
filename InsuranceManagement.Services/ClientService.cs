@@ -77,17 +77,38 @@ namespace InsuranceManagement.Services
                     ctx
                         .Clients
                         .Single(e => e.ClientID == id && e.OwnerId == _ownerId);
-                    return
-                    new ClientDetail
-                    {
-                        ClientID= entity.ClientID,
-                        FirstName = entity.FirstName,
-                        LastName = entity.LastName,
-                        Phone = entity.Phone,
-                        Email = entity.Email,
-                        CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc
-                    };
+                return
+                new ClientDetail
+                {
+                    ClientID = entity.ClientID,
+                    FirstName = entity.FirstName,
+                    LastName = entity.LastName,
+                    Phone = entity.Phone,
+                    Email = entity.Email,
+                    CreatedUtc = entity.CreatedUtc,
+                    ModifiedUtc = entity.ModifiedUtc
+                };
+            }
+        }
+
+        public bool UpdateClient(ClientEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Clients
+                        .Single(e => e.ClientID == model.ClientID && e.OwnerId == _ownerId);
+
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.Phone = model.Phone;
+                entity.Email = model.Email;
+                entity.Address = model.Address;
+                entity.City = model.City;
+                entity.State = model.State;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

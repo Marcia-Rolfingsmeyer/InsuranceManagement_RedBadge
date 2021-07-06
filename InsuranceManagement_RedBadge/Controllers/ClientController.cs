@@ -1,4 +1,5 @@
 ﻿using InsuranceManagement.Models;
+using InsuranceManagement.Models.Client;
 using InsuranceManagement.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -55,6 +56,26 @@ namespace InsuranceManagement_RedBadge.Controllers
             var svc = CreateClientService();
             var model = svc.GetClientById(id);
 
+            return View(model);
+        }
+
+        // EDIT
+        public ActionResult Edit(int id)
+        {
+            var service = CreateClientService();
+            var detail = service.GetClientById(id);
+            var model =
+                new ClientEdit
+                {
+                    ClientID = detail.ClientID,
+                    FirstName = detail.FirstName,
+                    LastName = detail.LastName,
+                    Phone = detail.Phone,
+                    Email = detail.Email,
+                    Address = detail.Address,
+                    City = detail.City,
+                    State = detail.State
+                };
             return View(model);
         }
 
