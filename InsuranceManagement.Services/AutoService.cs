@@ -16,7 +16,8 @@ namespace InsuranceManagement.Services
         {
             _ownerId = ownerId;
         }
-
+        
+        //Create new Auto
         public bool CreateAuto(AutoCreate model)
         {
             var entity =
@@ -41,14 +42,15 @@ namespace InsuranceManagement.Services
             }
         }
 
+        //Read - GET - List of Autos
         public IEnumerable<AutoListItem> GetAutos()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                    .Autos.AsEnumerable()
-                    .Where(e => e.OwnerId != null)
+                    .Autos
+                    .Where(e => e.OwnerId == _ownerId)
                     .Select(
                         e =>
                         new AutoListItem
@@ -58,8 +60,7 @@ namespace InsuranceManagement.Services
                             CarModel = e.CarModel,
                             Year = e.Year,
                             VINNumber = e.VINNumber
-                        }
-                        );
+                        });
                 return query.ToArray();
             }
         }

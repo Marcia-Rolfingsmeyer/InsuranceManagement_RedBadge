@@ -23,14 +23,13 @@ namespace InsuranceManagement_RedBadge.Controllers
             return View(model);
         }
 
-        // GET 
+        // GET : Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // Add code here 
-        // POST
+        // POST: Create/Client
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ClientCreate model)
