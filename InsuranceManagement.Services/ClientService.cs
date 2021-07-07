@@ -85,12 +85,16 @@ namespace InsuranceManagement.Services
                     LastName = entity.LastName,
                     Phone = entity.Phone,
                     Email = entity.Email,
+                    Address = entity.Address,
+                    City = entity.City,
+                    State = entity.State,
                     CreatedUtc = entity.CreatedUtc,
-                    ModifiedUtc = entity.ModifiedUtc
+                    ModifiedUtc = DateTimeOffset.Now
                 };
             }
         }
 
+        // POST : ClientDetail
         public bool UpdateClient(ClientEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -107,6 +111,21 @@ namespace InsuranceManagement.Services
                 entity.Address = model.Address;
                 entity.City = model.City;
                 entity.State = model.State;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteClient (int clientId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Clients
+                    .Single(e => e.ClientID == clientId && e.OwnerId == _ownerId);
+
+                ctx.Clients.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

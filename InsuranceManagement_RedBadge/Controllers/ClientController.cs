@@ -51,6 +51,7 @@ namespace InsuranceManagement_RedBadge.Controllers
         }
 
         // GET: DETAIL
+        //[ActionName("Details")]
         public ActionResult Details(int id)
         {
             var svc = CreateClientService();
@@ -82,6 +83,7 @@ namespace InsuranceManagement_RedBadge.Controllers
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //[ActionName("Edit")]
         public ActionResult Edit(int id, ClientEdit model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -102,6 +104,31 @@ namespace InsuranceManagement_RedBadge.Controllers
 
             ModelState.AddModelError("", "The client could not be updated.");
             return View(model);
+        }
+
+        // GET: Delete
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateClientService();
+            var model = svc.GetClientById(id);
+
+            return View(model);
+        }
+
+        // POST: Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateClientService();
+            
+            service.DeleteClient(id);
+
+            TempData["SaveResult"] = "The client was deleted.";
+            
+            return RedirectToAction("Index");
         }
 
         private ClientService CreateClientService()
