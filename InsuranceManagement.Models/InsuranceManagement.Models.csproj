@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auto\AutoCreate.cs" />
+    <Compile Include="Auto\AutoListItem.cs" />
     <Compile Include="Client\ClientCreate.cs" />
     <Compile Include="Client\ClientDetail.cs" />
     <Compile Include="Client\ClientEdit.cs" />

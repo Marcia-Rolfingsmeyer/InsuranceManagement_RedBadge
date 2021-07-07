@@ -9,6 +9,8 @@ namespace InsuranceManagement.Models
 {
     public class ClientList
     {
+        //Get - Index View
+
         [Display(Name = "Client ID")]
         public int ClientID { get; set; }
 
@@ -21,6 +23,8 @@ namespace InsuranceManagement.Models
         public string Phone { get; set; }
 
         public string Email { get; set; }
+
+        //GET: Details
 
         public string Address { get; set; }
 

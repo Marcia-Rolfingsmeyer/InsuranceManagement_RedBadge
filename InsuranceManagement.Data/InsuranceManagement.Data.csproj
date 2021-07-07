@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auto.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202107041834554_initial.cs" />
@@ -63,6 +64,10 @@
     <Compile Include="Migrations\202107041938045_ModifiedProperty.cs" />
     <Compile Include="Migrations\202107041938045_ModifiedProperty.Designer.cs">
       <DependentUpon>202107041938045_ModifiedProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071835138_Auto.cs" />
+    <Compile Include="Migrations\202107071835138_Auto.Designer.cs">
+      <DependentUpon>202107071835138_Auto.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107041938045_ModifiedProperty.resx">
       <DependentUpon>202107041938045_ModifiedProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071835138_Auto.resx">
+      <DependentUpon>202107071835138_Auto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
