@@ -69,6 +69,10 @@
     <Compile Include="Migrations\202107071835138_Auto.Designer.cs">
       <DependentUpon>202107071835138_Auto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107071945154_PropertyToString.cs" />
+    <Compile Include="Migrations\202107071945154_PropertyToString.Designer.cs">
+      <DependentUpon>202107071945154_PropertyToString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107071835138_Auto.resx">
       <DependentUpon>202107071835138_Auto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071945154_PropertyToString.resx">
+      <DependentUpon>202107071945154_PropertyToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -20,7 +20,7 @@ namespace InsuranceManagement.Models.Auto
         public int Year { get; set; }
 
         [Display(Name = "VIN Number")]
-        public int VINNumber { get; set; }
+        public string VINNumber { get; set; }
 
         //GET : Details
         [Display(Name = "Current Carrier")]
@@ -30,7 +30,7 @@ namespace InsuranceManagement.Models.Auto
         public int CurrentDeductible { get; set; }
 
         [Display(Name = "Policy Number")]
-        public int PolicyNumber { get; set; }
+        public string PolicyNumber { get; set; }
 
         [Display(Name = "Policy Start Date")]
         public DateTimeOffset? PolicyStartDate { get; set; }
