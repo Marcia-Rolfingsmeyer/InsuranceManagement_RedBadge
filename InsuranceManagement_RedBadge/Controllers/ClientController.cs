@@ -19,7 +19,7 @@ namespace InsuranceManagement_RedBadge.Controllers
             var ownerId = Guid.Parse(User.Identity.GetUserId());
             var service = new ClientService(ownerId);
             var model = service.GetClients();
-            
+
             return View(model);
         }
 
@@ -41,11 +41,11 @@ namespace InsuranceManagement_RedBadge.Controllers
 
             if (service.CreateClient(model))
             {
-                TempData["SaveResult"] = "Your client was created.";
+                TempData["SaveResult"] = "The client was created.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Client could not be created.");
+            ModelState.AddModelError("", "The client could not be created.");
 
             return View(model);
         }
@@ -59,7 +59,7 @@ namespace InsuranceManagement_RedBadge.Controllers
             return View(model);
         }
 
-        // EDIT
+        // GET: EDIT
         public ActionResult Edit(int id)
         {
             var service = CreateClientService();
@@ -76,6 +76,31 @@ namespace InsuranceManagement_RedBadge.Controllers
                     City = detail.City,
                     State = detail.State
                 };
+            return View(model);
+        }
+
+        // POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ClientEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.ClientID != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateClientService();
+
+            if (service.UpdateClient(model))
+            {
+                TempData["SaveResult"] = "The client was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "The client could not be updated.");
             return View(model);
         }
 
