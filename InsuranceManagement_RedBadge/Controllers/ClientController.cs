@@ -49,8 +49,7 @@ namespace InsuranceManagement_RedBadge.Controllers
             return View(model);
         }
 
-        // GET: DETAIL
-        //[ActionName("Details")]
+        // GET: DETAIL/Client
         public ActionResult Details(int id)
         {
             var svc = CreateClientService();
@@ -59,7 +58,7 @@ namespace InsuranceManagement_RedBadge.Controllers
             return View(model);
         }
 
-        // GET: EDIT
+        // GET: EDIT/Client
         public ActionResult Edit(int id)
         {
             var service = CreateClientService();
@@ -79,10 +78,9 @@ namespace InsuranceManagement_RedBadge.Controllers
             return View(model);
         }
 
-        // POST
+        // POST : Edit/Client
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //[ActionName("Edit")]
         public ActionResult Edit(int id, ClientEdit model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -105,7 +103,7 @@ namespace InsuranceManagement_RedBadge.Controllers
             return View(model);
         }
 
-        // GET: Delete
+        // GET: Delete/Client
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
@@ -115,7 +113,7 @@ namespace InsuranceManagement_RedBadge.Controllers
             return View(model);
         }
 
-        // POST: Delete
+        // POST: Delete/Client
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]

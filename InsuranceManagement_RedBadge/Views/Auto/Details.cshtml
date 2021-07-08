@@ -1,0 +1,154 @@
+﻿@model InsuranceManagement.Models.Auto.AutoDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Auto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mileage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mileage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VINNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VINNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentCarrier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentCarrier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentDeductible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentDeductible)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyEndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LiabilityLimit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LiabilityLimit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LossesLastFiveYears)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LossesLastFiveYears)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearOfLoss)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearOfLoss)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClaimsLastFiveYears)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClaimsLastFiveYears)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmountOfClaim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmountOfClaim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearOfClaim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearOfClaim)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AutoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

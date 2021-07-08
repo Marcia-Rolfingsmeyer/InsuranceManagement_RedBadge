@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Auto Index</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -20,7 +20,9 @@
         @TempData["SaveResult"]
     </div>
 }
+
 <table class="table">
+    <h4>Auto</h4>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.AutoID)
@@ -37,7 +39,7 @@
         <th>
             @Html.DisplayNameFor(model => model.VINNumber)
         </th>
-
+        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -60,9 +62,9 @@
             </td>
 
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id = item.AutoID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AutoID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AutoID })
             </td>
         </tr>
     }

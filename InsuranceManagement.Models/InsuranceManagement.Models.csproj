@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auto\AutoCreate.cs" />
+    <Compile Include="Auto\AutoDetail.cs" />
+    <Compile Include="Auto\AutoEdit.cs" />
     <Compile Include="Auto\AutoListItem.cs" />
     <Compile Include="Client\ClientCreate.cs" />
     <Compile Include="Client\ClientDetail.cs" />

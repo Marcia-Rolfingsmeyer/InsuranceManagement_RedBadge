@@ -16,7 +16,7 @@ namespace InsuranceManagement.Services
         {
             _ownerId = ownerId;
         }
-        
+
         //Create new Auto
         public bool CreateAuto(AutoCreate model)
         {
@@ -33,7 +33,13 @@ namespace InsuranceManagement.Services
                     CurrentDeductible = model.CurrentDeductible,
                     PolicyNumber = model.PolicyNumber,
                     PolicyEndDate = model.PolicyEndDate,
-                    PolicyStartDate = model.PolicyStartDate
+                    PolicyStartDate = model.PolicyStartDate,
+                    LiabilityLimit = model.LiabilityLimit,
+                    LossesLastFiveYears = model.LossesLastFiveYears,
+                    YearOfLoss = model.YearOfLoss,
+                    ClaimsLastFiveYears = model.ClaimsLastFiveYears,
+                    AmountOfClaim = model.AmountOfClaim,
+                    YearOfClaim = model.YearOfClaim
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -62,6 +68,85 @@ namespace InsuranceManagement.Services
                             VINNumber = e.VINNumber
                         });
                 return query.ToArray();
+            }
+        }
+
+        //GET : Auto Details
+        public AutoDetail GetAutoById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Autos
+                    .Single(e => e.AutoID == id && e.OwnerId == _ownerId);
+                return
+                    new AutoDetail
+                    {
+                        AutoID = entity.AutoID,
+                        Make = entity.Make,
+                        CarModel = entity.CarModel,
+                        Year = entity.Year,
+                        Mileage = entity.Mileage,
+                        VINNumber = entity.VINNumber,
+                        CurrentCarrier = entity.CurrentCarrier,
+                        CurrentDeductible = entity.CurrentDeductible,
+                        PolicyNumber = entity.PolicyNumber,
+                        PolicyStartDate = entity.PolicyStartDate,
+                        PolicyEndDate = entity.PolicyEndDate,
+                        LiabilityLimit = entity.LiabilityLimit,
+                        LossesLastFiveYears = entity.LossesLastFiveYears,
+                        YearOfLoss = entity.YearOfLoss,
+                        ClaimsLastFiveYears = entity.ClaimsLastFiveYears,
+                        AmountOfClaim = entity.AmountOfClaim,
+                        YearOfClaim = entity.YearOfClaim
+                    };
+            }
+        }
+
+        //POST: AutoDetail
+        public bool UpdateAuto (AutoEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Autos
+                    .Single(e => e.AutoID == model.AutoID && e.OwnerId == _ownerId);
+
+                entity.Make = model.Make;
+                entity.CarModel = model.CarModel;
+                entity.Year = model.Year;
+                entity.Mileage = model.Mileage;
+                entity.VINNumber = model.VINNumber;
+                entity.CurrentCarrier = model.CurrentCarrier;
+                entity.CurrentDeductible = model.CurrentDeductible;
+                entity.PolicyNumber = model.PolicyNumber;
+                entity.PolicyStartDate = model.PolicyEndDate;
+                entity.LiabilityLimit = model.LiabilityLimit;
+                entity.LossesLastFiveYears = model.LossesLastFiveYears;
+                entity.YearOfLoss = model.YearOfLoss;
+                entity.ClaimsLastFiveYears = model.ClaimsLastFiveYears;
+                entity.AmountOfClaim = model.AmountOfClaim;
+                entity.YearOfClaim = model.YearOfClaim;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        //GET: Auto/Delete
+        public bool DeleteAuto (int autoId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Autos
+                    .Single(e => e.AutoID == autoId && e.OwnerId == _ownerId);
+
+                ctx.Autos.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

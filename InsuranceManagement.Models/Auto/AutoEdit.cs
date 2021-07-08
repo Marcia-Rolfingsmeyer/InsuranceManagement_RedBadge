@@ -7,19 +7,15 @@ using System.Threading.Tasks;
 
 namespace InsuranceManagement.Models.Auto
 {
-    public class AutoCreate
+    public class AutoEdit
     {
-        [Display(Name ="Auto ID")]
+        [Display(Name = "Auto ID")]
         public int AutoID { get; set; }
 
-        [Required]
         public string Make { get; set; }
 
-        [Required]
-        [Display(Name = "Model")]
         public string CarModel { get; set; }
 
-        [Required]
         public int Year { get; set; }
 
         public int Mileage { get; set; }
@@ -41,6 +37,7 @@ namespace InsuranceManagement.Models.Auto
 
         [Display(Name = "Policy End Date")]
         public DateTimeOffset? PolicyEndDate { get; set; }
+
         [Display(Name = "Liability Limit")]
         public int LiabilityLimit { get; set; }
 

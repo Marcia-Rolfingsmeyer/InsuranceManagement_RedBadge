@@ -73,6 +73,10 @@
     <Compile Include="Migrations\202107071945154_PropertyToString.Designer.cs">
       <DependentUpon>202107071945154_PropertyToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107080436321_doublechecking.cs" />
+    <Compile Include="Migrations\202107080436321_doublechecking.Designer.cs">
+      <DependentUpon>202107080436321_doublechecking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107071945154_PropertyToString.resx">
       <DependentUpon>202107071945154_PropertyToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107080436321_doublechecking.resx">
+      <DependentUpon>202107080436321_doublechecking.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

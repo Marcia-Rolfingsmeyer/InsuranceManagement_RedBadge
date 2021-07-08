@@ -116,6 +116,7 @@ namespace InsuranceManagement.Services
             }
         }
 
+        //Delete
         public bool DeleteClient (int clientId)
         {
             using (var ctx = new ApplicationDbContext())
