@@ -55,7 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auto.cs" />
+    <Compile Include="Business.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="CommercialAuto.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202107041834554_initial.cs" />
     <Compile Include="Migrations\202107041834554_initial.Designer.cs">
@@ -80,6 +82,10 @@
     <Compile Include="Migrations\202107090241235_PersonalAuto.cs" />
     <Compile Include="Migrations\202107090241235_PersonalAuto.Designer.cs">
       <DependentUpon>202107090241235_PersonalAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107091948051_CommercialAutoBusiness.cs" />
+    <Compile Include="Migrations\202107091948051_CommercialAutoBusiness.Designer.cs">
+      <DependentUpon>202107091948051_CommercialAutoBusiness.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonalAuto.cs" />
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107090241235_PersonalAuto.resx">
       <DependentUpon>202107090241235_PersonalAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107091948051_CommercialAutoBusiness.resx">
+      <DependentUpon>202107091948051_CommercialAutoBusiness.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -79,6 +79,7 @@ namespace InsuranceManagement.Services
                 return query.ToArray();
             }
         }
+
         //GET : PersonalAuto Details
         public PersonalAutoDetail GetPersonalAutoById(int id)
         {

@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AutoController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\CommercialAutoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PersonalAutoController.cs" />
@@ -253,6 +254,8 @@
     <Content Include="Views\PersonalAuto\Details.cshtml" />
     <Content Include="Views\PersonalAuto\Edit.cshtml" />
     <Content Include="Views\PersonalAuto\Delete.cshtml" />
+    <Content Include="Views\CommercialAuto\Index.cshtml" />
+    <Content Include="Views\CommercialAuto\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
