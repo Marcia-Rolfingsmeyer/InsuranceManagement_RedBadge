@@ -172,6 +172,7 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PersonalAutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -247,9 +248,15 @@
     <Content Include="Views\Auto\Create.cshtml" />
     <Content Include="Views\Auto\Edit.cshtml" />
     <Content Include="Views\Auto\Delete.cshtml" />
+    <Content Include="Views\PersonalAuto\Index.cshtml" />
+    <Content Include="Views\PersonalAuto\Create.cshtml" />
+    <Content Include="Views\PersonalAuto\Details.cshtml" />
+    <Content Include="Views\PersonalAuto\Edit.cshtml" />
+    <Content Include="Views\PersonalAuto\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Personal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -62,11 +62,16 @@
     <Compile Include="Client\ClientDetail.cs" />
     <Compile Include="Client\ClientEdit.cs" />
     <Compile Include="Client\ClientList.cs" />
+    <Compile Include="PersonalAuto\PersonalAutoCreate.cs" />
+    <Compile Include="PersonalAuto\PersonalAutoDetail.cs" />
+    <Compile Include="PersonalAuto\PersonalAutoEdit.cs" />
+    <Compile Include="PersonalAuto\PersonalAutoList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

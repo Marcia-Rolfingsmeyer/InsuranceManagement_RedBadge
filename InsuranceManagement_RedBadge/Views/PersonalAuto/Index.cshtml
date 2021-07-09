@@ -1,0 +1,71 @@
+﻿@model IEnumerable<InsuranceManagement.Models.PersonalAuto.PersonalAutoList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+           @Html.DisplayNameFor(model => model.PersonalAutoID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VINNumber)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalAutoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VINNumber)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PersonalAutoID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PersonalAutoID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PersonalAutoID })
+            </td>
+        </tr>
+    }
+
+</table>

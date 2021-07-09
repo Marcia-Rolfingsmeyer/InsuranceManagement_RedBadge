@@ -14,6 +14,7 @@ namespace InsuranceManagement.Models.Auto
 
         public string Make { get; set; }
 
+        [Display(Name = "Model")]
         public string CarModel { get; set; }
 
         public int Year { get; set; }

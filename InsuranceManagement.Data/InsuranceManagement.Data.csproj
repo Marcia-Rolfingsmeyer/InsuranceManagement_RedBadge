@@ -77,7 +77,12 @@
     <Compile Include="Migrations\202107080436321_doublechecking.Designer.cs">
       <DependentUpon>202107080436321_doublechecking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107090241235_PersonalAuto.cs" />
+    <Compile Include="Migrations\202107090241235_PersonalAuto.Designer.cs">
+      <DependentUpon>202107090241235_PersonalAuto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PersonalAuto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107080436321_doublechecking.resx">
       <DependentUpon>202107080436321_doublechecking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107090241235_PersonalAuto.resx">
+      <DependentUpon>202107090241235_PersonalAuto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

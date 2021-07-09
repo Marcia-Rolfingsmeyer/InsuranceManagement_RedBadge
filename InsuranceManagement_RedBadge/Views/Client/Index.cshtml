@@ -4,11 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Client Index</h2>
+<h2> Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+<h4>Client</h4>
 
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -23,6 +25,7 @@
 }
 
 <table class="table">
+    
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ClientID)

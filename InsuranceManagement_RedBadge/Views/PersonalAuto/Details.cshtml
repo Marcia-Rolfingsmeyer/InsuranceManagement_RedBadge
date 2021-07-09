@@ -1,14 +1,13 @@
-﻿@model InsuranceManagement.Models.Auto.AutoDetail
+﻿@model InsuranceManagement.Models.PersonalAuto.PersonalAutoDetail
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
 }
 
-<h2>Delete</h2>
+<h2>Details</h2>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Auto</h4>
+    <h4>Personal Auto </h4>
     <hr />
     <dl class="dl-horizontal">
 
@@ -140,14 +139,57 @@
             @Html.DisplayFor(model => model.YearOfClaim)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalAutoID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonalAutoID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFullCoverage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFullCoverage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsLiability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsLiability)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsUninsuredMotorist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsUninsuredMotorist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCarRental)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCarRental)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsMedicalCoverage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsMedicalCoverage)
+        </dd>
+
     </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonalAutoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

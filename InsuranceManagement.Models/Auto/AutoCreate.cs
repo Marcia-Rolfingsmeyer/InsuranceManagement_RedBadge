@@ -41,6 +41,7 @@ namespace InsuranceManagement.Models.Auto
 
         [Display(Name = "Policy End Date")]
         public DateTimeOffset? PolicyEndDate { get; set; }
+        
         [Display(Name = "Liability Limit")]
         public int LiabilityLimit { get; set; }
 
@@ -53,7 +54,7 @@ namespace InsuranceManagement.Models.Auto
         [Display(Name = "Claims Last Five Years")]
         public bool ClaimsLastFiveYears { get; set; }
 
-        [Display(Name = "Amount Of Claim")]
+        [Display(Name = "Most Recent Amount Of Claim")]
         public int AmountOfClaim { get; set; }
 
         [Display(Name = "Most Recent Year of Claim")]

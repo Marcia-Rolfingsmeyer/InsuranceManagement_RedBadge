@@ -12,6 +12,7 @@ namespace InsuranceManagement.Services
     public class ClientService
     {
         private readonly Guid _ownerId;
+
         public ClientService(Guid ownerId)
         {
             _ownerId = ownerId;
