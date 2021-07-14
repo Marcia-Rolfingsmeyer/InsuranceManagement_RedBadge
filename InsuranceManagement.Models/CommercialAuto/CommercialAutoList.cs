@@ -10,9 +10,11 @@ namespace InsuranceManagement.Models.CommercialAuto
 {
     public class CommercialAutoList : AutoListItem
     {
-        public int CommercialAutoID { get; set; }
-
         [Display(Name = "Number in Fleet")]
         public int NumberInFleet { get; set; }
+
+        //FK
+        public int? ClientID { get; set; }
+        public virtual ClientList Client { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,5 +53,10 @@ namespace InsuranceManagement.Data
         public DateTimeOffset? ModifiedUtc { get; set; }
 
         //public string FullName() => $"{FirstName} {LastName}";
+
+        public virtual List<PersonalAuto> PersonalAutos { get; set; } //= new List<PersonalAuto>();
+
+        public virtual List<CommercialAuto> CommercialAutos { get; set; }
+
     }
 }

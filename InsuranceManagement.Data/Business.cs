@@ -9,6 +9,8 @@ namespace InsuranceManagement.Data
 {
     public class Business
     {
+        // would build FK relationship in Commercial Classes 
+
         [Key]
         public int BusinessID { get; set; }
         public string NameBusiness { get; set; }

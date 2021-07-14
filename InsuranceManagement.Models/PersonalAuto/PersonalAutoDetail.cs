@@ -10,9 +10,6 @@ namespace InsuranceManagement.Models.PersonalAuto
 {
     public class PersonalAutoDetail : AutoDetail
      {
-        [Display(Name = "Peronal Auto ID")]
-        public int PersonalAutoID { get; set; }
-
         [Display(Name = "Full Coverage")]
         public bool IsFullCoverage { get; set; }
 
@@ -27,5 +24,8 @@ namespace InsuranceManagement.Models.PersonalAuto
 
         [Display(Name = "Medical Coverage")]
         public bool IsMedicalCoverage { get; set; }
+        
+        public int? ClientID { get; set; }
+        public virtual ClientList Client { get; set; }
     }
 }

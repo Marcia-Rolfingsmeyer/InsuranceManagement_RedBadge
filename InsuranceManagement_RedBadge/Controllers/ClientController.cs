@@ -73,7 +73,7 @@ namespace InsuranceManagement_RedBadge.Controllers
                     Email = detail.Email,
                     Address = detail.Address,
                     City = detail.City,
-                    State = detail.State
+                    State = detail.State, 
                 };
             return View(model);
         }

@@ -59,64 +59,12 @@
     <Compile Include="Client.cs" />
     <Compile Include="CommercialAuto.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202107041834554_initial.cs" />
-    <Compile Include="Migrations\202107041834554_initial.Designer.cs">
-      <DependentUpon>202107041834554_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107041938045_ModifiedProperty.cs" />
-    <Compile Include="Migrations\202107041938045_ModifiedProperty.Designer.cs">
-      <DependentUpon>202107041938045_ModifiedProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107071835138_Auto.cs" />
-    <Compile Include="Migrations\202107071835138_Auto.Designer.cs">
-      <DependentUpon>202107071835138_Auto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107071945154_PropertyToString.cs" />
-    <Compile Include="Migrations\202107071945154_PropertyToString.Designer.cs">
-      <DependentUpon>202107071945154_PropertyToString.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107080436321_doublechecking.cs" />
-    <Compile Include="Migrations\202107080436321_doublechecking.Designer.cs">
-      <DependentUpon>202107080436321_doublechecking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107090241235_PersonalAuto.cs" />
-    <Compile Include="Migrations\202107090241235_PersonalAuto.Designer.cs">
-      <DependentUpon>202107090241235_PersonalAuto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107091948051_CommercialAutoBusiness.cs" />
-    <Compile Include="Migrations\202107091948051_CommercialAutoBusiness.Designer.cs">
-      <DependentUpon>202107091948051_CommercialAutoBusiness.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonalAuto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107041834554_initial.resx">
-      <DependentUpon>202107041834554_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107041938045_ModifiedProperty.resx">
-      <DependentUpon>202107041938045_ModifiedProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107071835138_Auto.resx">
-      <DependentUpon>202107071835138_Auto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107071945154_PropertyToString.resx">
-      <DependentUpon>202107071945154_PropertyToString.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107080436321_doublechecking.resx">
-      <DependentUpon>202107080436321_doublechecking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107090241235_PersonalAuto.resx">
-      <DependentUpon>202107090241235_PersonalAuto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107091948051_CommercialAutoBusiness.resx">
-      <DependentUpon>202107091948051_CommercialAutoBusiness.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

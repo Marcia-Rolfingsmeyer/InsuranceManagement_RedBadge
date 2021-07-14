@@ -1,4 +1,5 @@
 ﻿using InsuranceManagement.Data;
+using InsuranceManagement.Models;
 using InsuranceManagement.Models.CommercialAuto;
 using System;
 using System.Collections.Generic;
@@ -24,17 +25,17 @@ namespace InsuranceManagement.Services
                 new CommercialAuto()
                 {
                     OwnerId = _ownerId,
+                    ClientID = model.ClientID,
 
                     //CommercialAuto
                     NumberInFleet = model.NumberInFleet,
 
-                    /*This Section build method to make         multiple vehicles
-                      * 
-                      * Make = entity.Make,
-                        CarModel = entity.CarModel,
-                        Year = entity.Year,
-                        Mileage = entity.Mileage,
-                        VINNumber = entity.VINNumber,*/
+                   //make method (per vehicle in fleet)
+                    Make = model.Make,
+                    CarModel = model.CarModel,
+                    Year = model.Year,
+                    Mileage = model.Mileage,
+                    VINNumber = model.VINNumber,
 
                     NumberOfDrivers = model.NumberOfDrivers,
                     DOTNumber = model.DOTNumber,
@@ -76,7 +77,8 @@ namespace InsuranceManagement.Services
                         e =>
                         new CommercialAutoList
                         {
-                            CommercialAutoID = e.CommercialAutoID,
+                            AutoID = e.AutoID,
+                            ClientID = e.ClientID,
                             NumberInFleet = e.NumberInFleet
                         });
                 return query.ToArray();
@@ -91,22 +93,24 @@ namespace InsuranceManagement.Services
                 var entity =
                     ctx
                     .CommercialAutos
-                    .Single(e => e.CommercialAutoID == id && e.OwnerId == _ownerId);
+                    .Single(e => e.AutoID == id && e.OwnerId == _ownerId);
                 return
                     new CommercialAutoDetail
                     {
 
                         //CommercialAuto
-                        CommercialAutoID = entity.CommercialAutoID,
-                       NumberInFleet = entity.NumberInFleet,
+                        AutoID = entity.AutoID,
+                        ClientID = entity.ClientID,
 
-                        /*This Section build method to make multiple vehicles
-                         * 
-                         * Make = entity.Make,
+
+                        NumberInFleet = entity.NumberInFleet,
+
+                        //make method (per vehicle in fleet)
+                        Make = entity.Make,
                         CarModel = entity.CarModel,
                         Year = entity.Year,
                         Mileage = entity.Mileage,
-                        VINNumber = entity.VINNumber,*/
+                        VINNumber = entity.VINNumber,
 
 
                         NumberOfDrivers = entity.NumberOfDrivers,
@@ -138,19 +142,17 @@ namespace InsuranceManagement.Services
                 var entity =
                     ctx
                     .CommercialAutos
-                    .Single(e => e.CommercialAutoID == model.CommercialAutoID && e.OwnerId == _ownerId);
+                    .Single(e => e.AutoID == model.AutoID && e.OwnerId == _ownerId);
+
+                //make method (per vehicle in fleet)
+                entity.Make = model.Make;
+                entity.CarModel = model.CarModel;
+                entity.Year = model.Year;
+                entity.Mileage = model.Mileage;
+                entity.VINNumber = model.VINNumber;
 
                 //CommercialAuto
                 entity.NumberInFleet = model.NumberInFleet;
-
-                /*This Section build method to make multiple vehicles
-                 * 
-                * Make = entity.Make,
-                CarModel = entity.CarModel,
-                Year = entity.Year,
-                Mileage = entity.Mileage,
-                VINNumber = entity.VINNumber,*/
-
                 entity.NumberOfDrivers = model.NumberOfDrivers;
                 entity.DOTNumber = model.DOTNumber;
                 entity.RadiusOfOperation = model.RadiusOfOperation;
@@ -169,19 +171,22 @@ namespace InsuranceManagement.Services
                 entity.AmountOfClaim = model.AmountOfClaim;
                 entity.YearOfClaim = model.YearOfClaim;
 
+                //FK
+                entity.ClientID = model.ClientID;
+
                 return ctx.SaveChanges() == 1;
             }
         }
 
         //GET: CommercialAuto/Delete
-        public bool DeleteCommercialAuto(int commercialAutoId)
+        public bool DeleteCommercialAuto(int AutoId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .CommercialAutos
-                    .Single(e => e.CommercialAutoID == commercialAutoId && e.OwnerId == _ownerId);
+                    .Single(e => e.AutoID == AutoId && e.OwnerId == _ownerId);
 
                 ctx.CommercialAutos.Remove(entity);
 

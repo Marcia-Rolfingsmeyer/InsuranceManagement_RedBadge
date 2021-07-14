@@ -10,8 +10,6 @@ namespace InsuranceManagement.Models.CommercialAuto
 {
     public class CommercialAutoCreate : AutoCreate
     {
-        public int CommercialAutoID { get; set; }
-
         [Display(Name = "Number in Fleet")]
         public int NumberInFleet { get; set; }
 
@@ -29,5 +27,8 @@ namespace InsuranceManagement.Models.CommercialAuto
 
         [Display(Name = "Collision Deductible")]
         public int CollisionDeductible { get; set; }
+
+        //FK One to many
+        public int ClientID { get; set; }
     }
 }

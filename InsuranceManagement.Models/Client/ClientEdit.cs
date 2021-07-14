@@ -33,5 +33,8 @@ namespace InsuranceManagement.Models.Client
         [Required]
         public string State { get; set; }
 
+        public int? PersonalAutoID { get; set; }
+        public int? CommercialAutoID { get; set; }
+
     }
 }

@@ -238,28 +238,31 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Client\Index.cshtml" />
-    <Content Include="Views\Client\Create.cshtml" />
-    <Content Include="Views\Client\Details.cshtml" />
-    <Content Include="Views\Client\Edit.cshtml" />
-    <Content Include="Views\Client\Delete.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffSet.cshtml" />
     <Content Include="Views\Auto\Index.cshtml" />
     <Content Include="Views\Auto\Details.cshtml" />
     <Content Include="Views\Auto\Create.cshtml" />
     <Content Include="Views\Auto\Edit.cshtml" />
     <Content Include="Views\Auto\Delete.cshtml" />
+    <Content Include="Views\CommercialAuto\Index.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
+    <Content Include="Views\Client\Details.cshtml" />
+    <Content Include="Views\Client\Edit.cshtml" />
+    <Content Include="Views\Client\Delete.cshtml" />
     <Content Include="Views\PersonalAuto\Index.cshtml" />
     <Content Include="Views\PersonalAuto\Create.cshtml" />
     <Content Include="Views\PersonalAuto\Details.cshtml" />
     <Content Include="Views\PersonalAuto\Edit.cshtml" />
     <Content Include="Views\PersonalAuto\Delete.cshtml" />
-    <Content Include="Views\CommercialAuto\Index.cshtml" />
     <Content Include="Views\CommercialAuto\Create.cshtml" />
+    <Content Include="Views\CommercialAuto\Edit.cshtml" />
+    <Content Include="Views\CommercialAuto\Details.cshtml" />
+    <Content Include="Views\CommercialAuto\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Personal\" />
+    <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

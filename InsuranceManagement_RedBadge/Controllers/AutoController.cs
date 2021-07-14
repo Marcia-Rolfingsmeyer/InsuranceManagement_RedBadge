@@ -1,4 +1,4 @@
-﻿using InsuranceManagement.Models.Auto;
+﻿/*using InsuranceManagement.Models.Auto;
 using InsuranceManagement.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -143,4 +143,4 @@ namespace InsuranceManagement_RedBadge.Controllers
             return service;
         }
     }
-}
+}*/

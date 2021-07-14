@@ -1,6 +1,8 @@
 ﻿using InsuranceManagement.Data;
 using InsuranceManagement.Models;
 using InsuranceManagement.Models.Client;
+using InsuranceManagement.Models.CommercialAuto;
+using InsuranceManagement.Models.PersonalAuto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +38,8 @@ namespace InsuranceManagement.Services
                     //County = model.County,
                     //Township = model.Township,
                     //SSNumberTaxID = model.SSNumberTaxID,
-                    CreatedUtc = DateTimeOffset.Now
+                    CreatedUtc = DateTimeOffset.Now,
+
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -63,7 +66,7 @@ namespace InsuranceManagement.Services
                                 LastName = e.LastName,
                                 Phone = e.Phone,
                                 Email = e.Email,
-                                CreatedUtc = e.CreatedUtc
+                                CreatedUtc = e.CreatedUtc,
                             });
                 return query.ToArray();
             }
@@ -77,7 +80,8 @@ namespace InsuranceManagement.Services
                 var entity =
                     ctx
                         .Clients
-                        .Single(e => e.ClientID == id && e.OwnerId == _ownerId);
+                        .Where(e => e.OwnerId == _ownerId)
+                        .Single(e => e.ClientID == id);
                 return
                 new ClientDetail
                 {
@@ -90,7 +94,30 @@ namespace InsuranceManagement.Services
                     City = entity.City,
                     State = entity.State,
                     CreatedUtc = entity.CreatedUtc,
-                    ModifiedUtc = DateTimeOffset.Now
+                    ModifiedUtc = entity.ModifiedUtc,
+
+                    PersonalAutos = entity.PersonalAutos
+
+                    .Select(e => new PersonalAutoList()
+                    {
+                        AutoID = e.AutoID,
+                        Make = e.Make,
+                        CarModel = e.CarModel,
+                        Year = e.Year,
+                        VINNumber = e.VINNumber,
+                        IsLiability = e.IsLiability,
+                        IsFullCoverage = e.IsFullCoverage
+
+                    }).ToList(),
+
+                    CommercialAutos = entity.CommercialAutos
+
+                    .Select(e => new CommercialAutoList()
+                    {
+                        AutoID = e.AutoID,
+                        NumberInFleet = e.NumberInFleet
+
+                    }).ToList()
                 };
             }
         }
@@ -118,7 +145,7 @@ namespace InsuranceManagement.Services
         }
 
         //Delete
-        public bool DeleteClient (int clientId)
+        public bool DeleteClient(int clientId)
         {
             using (var ctx = new ApplicationDbContext())
             {

@@ -10,8 +10,6 @@ namespace InsuranceManagement.Models.CommercialAuto
 {
     public class CommercialAutoDetail : AutoDetail
     {
-        public int CommercialAutoID { get; set; }
-
         [Display(Name = "Number in Fleet")]
         public int NumberInFleet { get; set; }
 
@@ -29,6 +27,9 @@ namespace InsuranceManagement.Models.CommercialAuto
 
         [Display(Name = "Collision Deductible")]
         public int CollisionDeductible { get; set; }
+
+        public int? ClientID { get; set; }
+        public virtual ClientList Client { get; set; }
 
     }
 }

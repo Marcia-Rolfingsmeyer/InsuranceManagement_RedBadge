@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Insurance Management</title>
+    <title>@ViewBag.Title - iManage</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -26,7 +26,8 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                         <li>@Html.ActionLink("Clients", "Index", "Client")</li>
-                        <li>@Html.ActionLink("Personal", "Index", "Auto")</li>
+                        <li>@Html.ActionLink("Personal", "Index", "PersonalAuto")</li>
+                        <li>@Html.ActionLink("Commercial", "Index", "CommercialAuto")</li>
                     }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>

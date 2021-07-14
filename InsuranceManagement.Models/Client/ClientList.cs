@@ -33,9 +33,16 @@ namespace InsuranceManagement.Models
         public string State { get; set; }
 
         [Display(Name = "Created")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTimeOffset CreatedUtc { get; set; }
 
         [Display(Name = "Modified")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTimeOffset? ModifiedUtc { get; set; }
+
+        public int? PersonalAutoID { get; set; }
+        public int? CommercialAutoID { get; set; }
     }
 }

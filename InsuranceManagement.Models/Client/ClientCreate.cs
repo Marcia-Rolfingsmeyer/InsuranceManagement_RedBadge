@@ -33,6 +33,9 @@ namespace InsuranceManagement.Models
         [Required]
         public string State { get; set; }
 
+        public int? PersonalAutoID { get; set; }
+        public int? CommercialAutoID { get; set; }
+
         //[Required]
         //[MinLength(5, ErrorMessage = "Must have 5 characters")]
         //[MaxLength(5, ErrorMessage = "ZipCode should have 5 characters")]

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using InsuranceManagement.Models.CommercialAuto;
+using InsuranceManagement.Models.PersonalAuto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -34,9 +36,18 @@ namespace InsuranceManagement.Models.Client
         public string State { get; set; }
 
         [Display(Name ="Created")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTimeOffset CreatedUtc { get; set; }
 
         [Display(Name = "Modified")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTimeOffset? ModifiedUtc { get; set; }
+
+        public virtual List<PersonalAutoList> PersonalAutos { get; set; }
+
+        public virtual List<CommercialAutoList> CommercialAutos { get; set; }
+
     }
 }

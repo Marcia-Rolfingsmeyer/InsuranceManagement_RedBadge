@@ -10,9 +10,6 @@ namespace InsuranceManagement.Models.PersonalAuto
 {
     public class PersonalAutoEdit : AutoEdit
     {
-        [Display(Name = "Peronal Auto ID")]
-        public int PersonalAutoID { get; set; }
-
         [Display(Name = "Full Coverage")]
         public bool IsFullCoverage { get; set; }
 
@@ -27,5 +24,7 @@ namespace InsuranceManagement.Models.PersonalAuto
 
         [Display(Name = "Medical Coverage")]
         public bool IsMedicalCoverage { get; set; }
+
+        public int ClientID { get; set; }
     }
 }

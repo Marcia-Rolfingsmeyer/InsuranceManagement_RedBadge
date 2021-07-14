@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Personal Auto </h4>
+    <h4>PersonalAuto</h4>
     <hr />
     <dl class="dl-horizontal">
 
@@ -140,11 +140,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PersonalAutoID)
+            @Html.DisplayNameFor(model => model.AutoID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PersonalAutoID)
+            @Html.DisplayFor(model => model.AutoID)
         </dd>
 
         <dt>
@@ -187,9 +187,17 @@
             @Html.DisplayFor(model => model.IsMedicalCoverage)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientID)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonalAutoID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AutoID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

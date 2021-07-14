@@ -1,4 +1,5 @@
 ﻿using InsuranceManagement.Data;
+using InsuranceManagement.Models;
 using InsuranceManagement.Models.PersonalAuto;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace InsuranceManagement.Services
                 {
                     //Auto
                     OwnerId = _ownerId,
+                    ClientID = model.ClientID,
                     Make = model.Make,
                     CarModel = model.CarModel,
                     Year = model.Year,
@@ -52,7 +54,7 @@ namespace InsuranceManagement.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.PersonalAutos.Add(entity);
+                ctx.Autos.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -70,7 +72,10 @@ namespace InsuranceManagement.Services
                         e =>
                         new PersonalAutoList
                         {
-                            PersonalAutoID = e.PersonalAutoID,
+                            AutoID = e.AutoID,
+                            ClientID = e.ClientID,
+                            //FirstName = e.Client.FirstName,
+                            //LastName = e.Client.LastName,
                             Make = e.Make,
                             CarModel = e.CarModel,
                             Year = e.Year,
@@ -88,11 +93,12 @@ namespace InsuranceManagement.Services
                 var entity =
                     ctx
                     .PersonalAutos
-                    .Single(e => e.PersonalAutoID == id && e.OwnerId == _ownerId);
-                return
-                    new PersonalAutoDetail
+                    .Single(e => e.AutoID == id && e.OwnerId == _ownerId);
+                    
+                return new PersonalAutoDetail
                     {
-                        PersonalAutoID = entity.PersonalAutoID,
+                        AutoID = entity.AutoID,
+                        ClientID = entity.ClientID,
 
                         //Auto
                         Make = entity.Make,
@@ -117,9 +123,8 @@ namespace InsuranceManagement.Services
                         IsLiability = entity.IsLiability,
                         IsUninsuredMotorist = entity.IsUninsuredMotorist,
                         IsCarRental = entity.IsCarRental,
-                        IsMedicalCoverage = entity.IsMedicalCoverage
-                        
-                    };
+                        IsMedicalCoverage = entity.IsMedicalCoverage,
+                };
             }
         }
 
@@ -131,7 +136,7 @@ namespace InsuranceManagement.Services
                 var entity =
                     ctx
                     .PersonalAutos
-                    .Single(e => e.PersonalAutoID == model.PersonalAutoID && e.OwnerId == _ownerId);
+                    .Single(e => e.AutoID == model.AutoID && e.OwnerId == _ownerId);
 
                 // Auto
                 entity.Make = model.Make;
@@ -157,6 +162,9 @@ namespace InsuranceManagement.Services
                 entity.IsCarRental = model.IsCarRental;
                 entity.IsMedicalCoverage = model.IsMedicalCoverage;
 
+                //FK
+                entity.ClientID = model.ClientID;
+
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -169,7 +177,7 @@ namespace InsuranceManagement.Services
                 var entity =
                     ctx
                     .PersonalAutos
-                    .Single(e => e.PersonalAutoID == personalAutoId && e.OwnerId == _ownerId);
+                    .Single(e => e.AutoID == personalAutoId && e.OwnerId == _ownerId);
 
                 ctx.PersonalAutos.Remove(entity);
 

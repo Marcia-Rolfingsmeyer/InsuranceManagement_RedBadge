@@ -65,7 +65,7 @@ namespace InsuranceManagement_RedBadge.Controllers
             var model =
                 new PersonalAutoEdit
                 {
-                    PersonalAutoID = detail.PersonalAutoID,
+                    AutoID = detail.AutoID,
                     
                     //Auto
                     Make = detail.Make,

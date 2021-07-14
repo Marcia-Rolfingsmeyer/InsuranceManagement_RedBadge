@@ -1,4 +1,4 @@
-﻿using InsuranceManagement.Data;
+﻿/*using InsuranceManagement.Data;
 using InsuranceManagement.Models.Auto;
 using System;
 using System.Collections.Generic;
@@ -150,4 +150,4 @@ namespace InsuranceManagement.Services
             }
         }
     }
-}
+}*/

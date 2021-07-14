@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace InsuranceManagement_RedBadge.Controllers
 {
+    [Authorize]
     public class CommercialAutoController : Controller
     {
         // GET: CommercialAuto
@@ -66,16 +67,14 @@ namespace InsuranceManagement_RedBadge.Controllers
                 {
 
                     //CommercialAuto
-                    CommercialAutoID = detail.CommercialAutoID,
+                    AutoID = detail.AutoID,
                     NumberInFleet = detail.NumberInFleet,
 
-                    /*This Section build method to make         multiple vehicles
-                      * 
-                      * Make = entity.Make,
-                        CarModel = entity.CarModel,
-                        Year = entity.Year,
-                        Mileage = entity.Mileage,
-                        VINNumber = entity.VINNumber,*/
+                     Make = detail.Make,
+                     CarModel = detail.CarModel,
+                     Year = detail.Year,
+                     Mileage = detail.Mileage,
+                     VINNumber = detail.VINNumber,
 
                     NumberOfDrivers = detail.NumberOfDrivers,
                     DOTNumber = detail.DOTNumber,
